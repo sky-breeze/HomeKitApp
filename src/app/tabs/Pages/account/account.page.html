@@ -1,0 +1,69 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar size="small">
+        <ion-buttons slot="start">
+            <ion-button [routerLink]="['/tabs/home']">
+                <ion-icon class="ion-icon-header" slot="icon-only" name="arrow-back"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+
+        <ion-buttons slot="end">
+            <ion-button (click)="openNotification()">
+                <ion-icon class="ion-icon-header" name="notifications-outline"></ion-icon>
+            </ion-button>
+            <ion-button (click)="doLogout()">
+                <ion-icon class="ion-icon-header" name="power-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-card>
+        <ion-card-content>
+            <ion-list>
+                <ion-item>
+                    <ion-avatar class="avatar" slot="start">
+                        <img src="assets/user-profile.jpg">
+                    </ion-avatar>
+                    <ion-label>
+                        <h2>{{userName | titlecase}}</h2>
+                        <h3>{{phoneNumber}}</h3>
+                    </ion-label>
+                </ion-item>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+        <!-- <ion-item [routerLink]="['/tabs/scan-document']" class="ion-activated">
+            <ion-icon name="scan-outline" slot="start"></ion-icon>
+            <ion-label>Scan Documents</ion-label>
+        </ion-item> -->
+
+        <!-- <ion-item [routerLink]="['/tabs/appliance']">
+            <ion-icon class="ion-icon" name="bag-add-outline" slot="start"></ion-icon>
+            <ion-label>Add Sensor</ion-label>
+        </ion-item> -->
+
+        <!-- <ion-item class="ion-activated" [routerLink]="['/tabs/news-feed']">
+            <ion-icon name="newspaper-outline" slot="start"></ion-icon>
+            <ion-label>News</ion-label>
+        </ion-item> -->
+        <ion-item class="ion-activated" [routerLink]="['/tabs/performance']">
+            <ion-icon class="ion-icon" name="stats-chart-outline" slot="start"></ion-icon>
+            <ion-label>Performance</ion-label>
+        </ion-item>
+        <ion-item class="ion-activated" [routerLink]="['/notification']">
+            <ion-icon class="ion-icon" name="notifications-outline" slot="start"></ion-icon>
+            <ion-label>Notifications</ion-label>
+        </ion-item>
+
+        <ion-item [routerLink]="['/about']">
+            <ion-icon class="ion-icon" name="information-circle-outline" slot="start"></ion-icon>
+            <ion-label>About</ion-label>
+        </ion-item>
+    </ion-card>
+
+</ion-content>

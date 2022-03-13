@@ -1,0 +1,32 @@
+.avatar {
+  vertical-align: middle;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid purple;
+}
+
+ion-icon {
+  font-size: 25px;
+}
+
+ion-icon {
+  color: purple;
+}
+
+ion-toolbar {
+  color: purple;
+}
+
+ion-label {
+  color: purple;
+}
+
+.header-toolbar {
+  --background: purple;
+  height: 50px; //by default 56px
+}
+
+.ion-icon-header {
+  color: white;
+}

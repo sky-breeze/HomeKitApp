@@ -1,0 +1,8 @@
+{
+  "name": "HomeKitApp",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,34 @@
+ion-item {
+    // border: 1px solid purple;
+    margin: 10px;
+}
+
+ion-toolbar {
+    color: white;
+}
+
+ion-select {
+    width: 100%;
+    justify-content: left;
+}
+
+ion-icon {
+    color: white
+}
+
+span {
+    color: red
+}
+
+.box {
+    border-color: #403E39;
+    border-width: thin;
+    border-style: solid;
+    border-radius: 3px;
+    height: 50%;
+}
+
+.new-background-color {
+    --background: #e0184d;
+    height: 70px; //by default 56px
+}

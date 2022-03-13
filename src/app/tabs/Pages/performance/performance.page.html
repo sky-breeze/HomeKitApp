@@ -1,0 +1,69 @@
+<ion-header>
+    <ion-toolbar size="small">
+        <ion-buttons slot="start" class="ion-icon-header">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title class="ion-icon-header">Performance</ion-title>
+        <ion-buttons slot="end">
+            <ion-button>
+                <ion-icon name="help-circle-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <div class="ion-padding">
+        <ion-card>
+            <form [formGroup]="searchForm">
+                <ion-item>
+                    <ion-label>Sensor</ion-label>
+                    <ion-select formControlName="sensor" *ngFor="let sensor of sensorList"  (ionChange)="onIonChange($event.target.value)" interface="action-sheet">
+                        <ion-select-option value="{{sensor.userSensorUuid}}">{{sensor.userAssignedSensorName}}</ion-select-option>
+                        <!-- <ion-select-option value="ES03">ES03</ion-select-option>-->
+                        <ion-select-option value="ES04">ES04</ion-select-option> 
+                    </ion-select>
+                </ion-item>
+                <ion-item>
+                    <ion-label>Date</ion-label>
+                    <ion-datetime formControlName="date" (ionChange)="onIonChange($event.target.value)" locale="fr-FR"></ion-datetime>
+                </ion-item>
+            </form>
+        </ion-card>
+        <ion-card>
+            <ion-card-content *ngIf="showGauage">
+            <ion-row *ngIf="sensorDetails">
+                <ion-col size="6" class="item-data">
+                    <span>Humidity SCD : </span>{{sensorDetails.humidityScd}}
+                </ion-col>
+                <ion-col size="6" class="item-data_temp" >
+                    <span>Temp SCD : </span>{{sensorDetails.tempScd}}
+                </ion-col>
+                
+            </ion-row>
+
+            <ion-row>
+                <ion-col style="text-align: center;">
+                    <rg-gauge-chart [canvasWidth]="canvasWidth" [needleValue]="needleValue" [centralLabel]="centralLabel"
+                        [options]="options" [name]="name" [bottomLabel]="bottomLabel"></rg-gauge-chart>
+                </ion-col>
+            </ion-row>
+                <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
+                
+    
+            </ion-card-content>
+            <ion-card-content *ngIf="!showGauage">
+                <ion-row>
+                    <ion-col style="text-align: center; padding: 20px; font-size: 20px;" >
+                        
+                        <span style="color: red;">No Data Found</span>
+                    </ion-col>
+                </ion-row>
+            </ion-card-content>
+        </ion-card>
+
+       
+    </div>
+
+</ion-content>

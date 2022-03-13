@@ -1,0 +1,80 @@
+ion-icon {
+  font-size: 25px;
+}
+
+ion-icon {
+  color: purple;
+}
+
+ion-toolbar {
+  color: white;
+}
+
+ion-label,
+strong {
+  color: purple;
+}
+
+ion-toolbar {
+  --min-height: 10% !important;
+}
+
+ion-card {
+  height: 20%;
+}
+
+ion-card-content {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.circle-delete-icon {
+  background: #e6e3df;
+  width: 15px;
+  height: 15px;
+  padding: 5px;
+  border-radius: 50%;
+  line-height: 60px;
+  text-align: center;
+  color: red;
+}
+
+.circle-edit-icon {
+  background: #e6e3df;
+  width: 15px;
+  height: 15px;
+  padding: 5px;
+  border-radius: 50%;
+  // line-height: 60px;
+  text-align: center;
+  color: blue;
+}
+
+.avatar {
+  background: #e6e3df;
+  width: 50px;
+  height: 50px;
+  padding: 7px;
+  border-radius: 50%;
+  // line-height: 60px;
+  text-align: center;
+}
+
+.background-color {
+  --background: white;
+}
+
+.fab-button-color {
+  --background: purple;
+}
+
+.avatar-number {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  line-height: 20px;
+  padding: 2px;
+  text-align: center;
+  border-radius: 50%;
+  background: #ccccff;
+}

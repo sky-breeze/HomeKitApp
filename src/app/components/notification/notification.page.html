@@ -1,0 +1,47 @@
+<ion-header translucent>
+    <ion-toolbar>
+        <ion-title>Notifications</ion-title>
+        <ion-buttons slot="end">
+            <ion-icon style="padding: 10px;font-size: 20px;" name="notifications-outline">
+
+            </ion-icon>
+
+            <ion-button slot="end" style="font-size: 20px;" color="danger" (click)="dismissModal()">
+                <ion-icon name="close-circle-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+
+        <ion-item *ngFor="let data of notifications; let i = index">
+
+            <ion-grid>
+                <ion-row>
+                    <ion-col size="2">
+                        <ion-icon name="mail-outline" fill="solid" color="warning" style="padding: 10px;font-size: 30px;"></ion-icon>
+                    </ion-col>
+
+                    <ion-col size="8">
+                        {{data.msg}}
+                    </ion-col>
+
+                    <ion-col size="2" style="margin-top: 10px;">
+                        <ion-icon color="danger" name="trash-outline" (click)="deleteNotification(i)"></ion-icon>
+                        <!-- <ion-button  style="font-size: 10px;" (click)="deleteNotification(i)">
+                            <ion-icon color="danger" name="trash-outline"></ion-icon>
+                        </ion-button> -->
+                    </ion-col>
+
+
+                </ion-row>
+            </ion-grid>
+
+        </ion-item>
+
+    </ion-list>
+
+
+</ion-content>

@@ -1,0 +1,93 @@
+<ion-header>
+    <ion-toolbar size="small">
+
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+            <!-- <ion-button [routerLink]="['/tabs/home']">
+                <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+            </ion-button> -->
+        </ion-buttons>
+
+        <ion-title>
+            Appliance
+        </ion-title>
+
+        <!-- <ion-buttons slot="end">
+
+            <ion-button>
+                <ion-icon name="help-circle-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons> -->
+
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card *ngFor="let appliance of appliances; let i = index">
+
+        <ion-toolbar class="background-color">
+
+            <ion-avatar slot="start" class="avatar">
+                <img src="assets/applianc.jpg">
+            </ion-avatar>
+            <!-- <span class="avatar-number">1</span> -->
+            <ion-label style="padding-left: 7px;font-weight: bold;">{{appliance.fkApplianceMasterUuid}}</ion-label>
+            <!-- <ion-label style="padding-left: 7px;">{{appliance.modifiedDate | date: 'dd/MM/yyyy'}}</ion-label> -->
+
+            <ion-buttons slot="end">
+                <ion-button (click)="editApplianceModal(appliance)">
+                    <ion-icon class="circle-edit-icon" style="font-size: 15px;" name="pencil-outline"></ion-icon>
+                </ion-button>
+                <ion-button (click)="deleteAppliance(appliance)">
+                    <ion-icon class="circle-delete-icon" style="font-size: 15px;" name="trash-outline"></ion-icon>
+                </ion-button>
+            </ion-buttons>
+
+            <!-- <ion-title slot="start" size="small" style="max-width: 80%;">{{appliance.applianceName}}</ion-title> -->
+
+        </ion-toolbar>
+        <ion-card-content>
+
+            <ion-grid>
+                <ion-row size="small">
+                    <ion-col size="3" class="ion-text-center">
+                        <strong><small>Usage</small></strong><br>{{appliance.usageKwh}} Kwh
+                    </ion-col>
+                    <ion-col size="3" class="ion-text-center">
+                        <strong><small>Hours</small></strong><br>{{appliance.hoursPerDay}}
+                    </ion-col>
+                    <ion-col size="3" class="ion-text-center">
+                        <strong><small>Quantity</small></strong><br>{{appliance.quantity}}
+                    </ion-col>
+                    <!-- <ion-col size="3" class="ion-text-center">
+                        <strong><small>Yearly-Usage</small></strong><br>{{appliance.yearlyUsage}}
+                    </ion-col> -->
+
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
+        <!-- <ion-toolbar >
+            <ion-buttons slot="start">
+                <ion-button>
+                    <ion-icon style="font-size: 15px;" name="pencil-outline"></ion-icon>
+                </ion-button>
+            </ion-buttons>
+            <ion-buttons slot="end">
+
+                <ion-button>
+                    <ion-icon style="font-size: 15px;" name="trash-outline"></ion-icon>
+                </ion-button>
+
+            </ion-buttons>
+
+
+        </ion-toolbar> -->
+    </ion-card>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="presentModal()" color="primary">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
+</ion-content>

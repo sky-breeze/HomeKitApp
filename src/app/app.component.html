@@ -1,0 +1,61 @@
+<ion-app>
+
+    <ion-menu contentId="main">
+        <ion-header>
+            <ion-toolbar>
+                <br>
+                <!-- <ion-button [routerLink]="['/tabs/account']">
+                    <ion-avatar slot="start" class="avatar">
+                        <img src="./assets/logo.png">
+                    </ion-avatar>
+                    <ion-label style="padding: 5px;">User Name</ion-label>
+                </ion-button> -->
+                <ion-item button [routerLink]="['/tabs/account']">
+                    <ion-avatar slot="start" class="avatar">
+                        <img src="./assets/user-profile.jpg">
+                    </ion-avatar>
+                    <ion-label>
+                        <strong>{{userName}}</strong>
+                        <p>{{phoneNumber}}</p>
+                    </ion-label>
+                </ion-item>
+            </ion-toolbar>
+            <ion-item-divider class="header-toolbar">
+                <ion-icon class="ion-icon-header" name="menu-outline"></ion-icon>
+                <ion-label style="margin-left: 10px;">
+                    Menu
+                </ion-label>
+            </ion-item-divider>
+
+
+        </ion-header>
+        <ion-content>
+
+            <ion-list>
+                <ion-menu-toggle auto-hide="true" *ngFor="let p of appPages">
+                    <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
+                        <ion-icon slot="start" [name]="p.icon"></ion-icon>
+                        <ion-label>
+                            {{p.title}}
+                        </ion-label>
+                    </ion-item>
+                </ion-menu-toggle>
+            </ion-list>
+        </ion-content>
+        <ion-item-divider class="header-toolbar" style="height: 20px;">
+            <ion-icon size="small" class="ion-icon-header" slot="start" name="help"></ion-icon>
+            <ion-label>
+                Privacy Policy . v11.90
+            </ion-label>
+
+
+        </ion-item-divider>
+
+        <!-- <ion-footer>
+            <h3>Privacy Policy</h3>
+            <p>v11.89</p>
+        </ion-footer> -->
+    </ion-menu>
+    <ion-router-outlet id="main"></ion-router-outlet>
+
+</ion-app>

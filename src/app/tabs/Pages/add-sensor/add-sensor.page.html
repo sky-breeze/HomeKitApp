@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar size="small">
+    <ion-buttons slot="start">
+      <ion-button (click)="dismissModal()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Add Sensor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card  >
+    <!-- <ion-card-header>
+      <ion-card-subtitle>Sensor Name</ion-card-subtitle>
+    </ion-card-header> -->
+  
+    <ion-card-content>
+      <form [formGroup]="sensorForm" (ngSubmit)="saveSensorForm()">
+        <ion-list>
+          <ion-item class="form-field">
+            <ion-label color="primary" position="floating">Sensor Name</ion-label>
+            <ion-input autocorrect="on" autofocus="on" clearInput="true" clearOnEdit="true" color="primary" inputmode="text"
+              formControlName="sensorName" placeholder="Ex. Test" required="true"></ion-input>
+          </ion-item>
+          <!-- <ion-item class="form-field">
+            <ion-label color="primary" position="floating">User UUID*</ion-label>
+            <ion-input autocorrect="on" autofocus="on" clearInput="true" clearOnEdit="true" color="primary" inputmode="text"
+              formControlName="userUuid" placeholder="User UUID" required="true"></ion-input>
+          </ion-item> -->
+          <ion-item class="form-field">
+            <ion-label color="primary" position="floating">User Assigned Sensor*</ion-label>
+            <ion-input autocorrect="on" autofocus="on" clearInput="true" clearOnEdit="true" color="primary" inputmode="text"
+              formControlName="userAssingedSensorName" placeholder="Assigned Sensor Name" required="true"></ion-input>
+          </ion-item>
+        </ion-list>
+        <div style="text-align: center;">
+          <ion-button type="submit" class="btncolor" [disabled]="sensorForm.invalid" >Add</ion-button>
+        </div>
+        
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

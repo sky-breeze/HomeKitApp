@@ -1,0 +1,75 @@
+<ion-header>
+    <ion-toolbar size="small">
+        <ion-buttons slot="start">
+            <ion-button (click)="dismissModal('failed')">
+                <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>Add Appliance</ion-title>
+        <!-- <ion-button slot="end" (click)="dismissModal()"> -->
+        <!-- <ion-icon name="close-circle-outline" slot="end" size="large" style="margin-right: 10px;" (click)="dismissModal()"></ion-icon> -->
+        <!-- </ion-button> -->
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+
+
+        <ion-card-content>
+            <form [formGroup]="addApplianceForm">
+                <ion-list>
+
+                    <ion-item>
+                        <ion-label color="primary" position="floating">Appliance<span>*</span></ion-label>
+                        <ion-select [interfaceOptions]="customActionSheetOptions" formControlName="applianceName" interface="action-sheet">
+                            <ion-select-option *ngFor="let appliance of applianceList" value={{appliance.applianceMasterUuid}}>{{appliance.applianceName}}</ion-select-option>
+                        </ion-select>
+                    </ion-item>
+
+
+                    <ion-item>
+                        <ion-label color="primary" position="floating">Usage<span>*</span></ion-label>
+                        <ion-input type="number" inputmode="decimal" formControlName="usage"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label color="primary" position="floating">Hours per day<span>*</span></ion-label>
+                        <ion-input type="number" inputmode="decimal" formControlName="hoursPerDay"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label color="primary" position="floating">Quantity<span>*</span></ion-label>
+                        <ion-input type="number" inputmode="decimal" formControlName="quantity"></ion-input>
+                    </ion-item>
+
+                </ion-list>
+
+
+
+
+
+                <br>
+
+
+                <div style="display: flex; justify-content: center;">
+                    <ion-button style="width: 100%;" expand="block" (click)="showUpdateButton ? updateAppliance(): initCreateAppliance()">
+                        {{buttonName}}
+                    </ion-button>
+
+
+                </div>
+
+
+
+
+
+
+
+            </form>
+        </ion-card-content>
+    </ion-card>
+
+
+
+
+
+</ion-content>
