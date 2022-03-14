@@ -45,6 +45,8 @@ export class LoginPage implements OnInit {
   ngOnInit() {
 
 
+
+
   }
 
 
@@ -72,7 +74,7 @@ export class LoginPage implements OnInit {
     this.postData.phoneNumber = this.loginForm.value.username
     this.postData.passcode = this.loginForm.value.password
     console.log('loginAction', this.postData)
-    // this.router.navigateByUrl(AppRoutes.TABS);
+
 
     this.authService.login(this.postData).subscribe(
       (res: any) => {

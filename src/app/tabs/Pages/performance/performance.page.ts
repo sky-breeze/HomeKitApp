@@ -18,7 +18,7 @@ export class PerformancePage {
   searchForm: FormGroup;
   sensorList: any = [];
   showGauage: boolean;
-  public canvasWidth = 300
+  public canvasWidth = 270
   public needleValue = 0
   public centralLabel = ''
   public name = ''
@@ -27,7 +27,7 @@ export class PerformancePage {
     hasNeedle: true,
     needleColor: 'gray',
     needleUpdateSpeed: 1000,
-    arcColors: ['#e71837 ', '#ffcccb', '#ffff00 ', '#a5d610', '#49b675'],
+    arcColors: ['#49b675', '#a5d610', '#ffff00', '#ffcccb', '#e71837 '],
     arcDelimiters: [30, 40, 50, 75],
     rangeLabel: ['0', '2000'],
     needleStartValue: 0,

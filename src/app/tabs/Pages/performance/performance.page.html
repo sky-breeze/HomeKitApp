@@ -31,18 +31,50 @@
                 </ion-item>
             </form>
         </ion-card>
-        <ion-card>
+        <ion-card class="card-bg">
             <ion-card-content *ngIf="showGauage">
-            <ion-row *ngIf="sensorDetails">
-                <ion-col size="6" class="item-data">
+                
+                <ion-row *ngIf="sensorDetails" style="padding-top: 30px; padding-bottom: 20px;">
+                    <!-- <ion-col size="6" class="item-data">
+                                    <span>Humidity SCD : </span>{{sensorDetails.humidityScd}}
+                                </ion-col> -->
+                    <ion-col size="8" class="item-data">
+                        <h4 style="font-size: 20px;">Humidity SCD</h4>
+                        <!-- <h5>{{sensorDetails.tempScd}}</h5> -->
+                
+                    </ion-col>
+                    <ion-col size="4" class="item-data_temp">
+                        <!-- <h4>Temp SCD</h4> -->
+                        <h5 style="font-size: 50px; color: blue;">{{sensorDetails.humidityScd}}</h5>
+                
+                    </ion-col>
+                
+                </ion-row>
+            </ion-card-content>
+        </ion-card>
+        <ion-card class="card-bg">
+            <ion-card-content *ngIf="showGauage">
+            <ion-row *ngIf="sensorDetails" style="padding-top: 30px; padding-bottom: 20px;">
+                <!-- <ion-col size="6" class="item-data">
                     <span>Humidity SCD : </span>{{sensorDetails.humidityScd}}
+                </ion-col> -->
+                <ion-col size="8"  class="item-data" >
+                    <h4 style="font-size: 20px;">Temp SCD</h4>
+                    <!-- <h5>{{sensorDetails.tempScd}}</h5> -->
+                    
                 </ion-col>
-                <ion-col size="6" class="item-data_temp" >
-                    <span>Temp SCD : </span>{{sensorDetails.tempScd}}
+                <ion-col size="4" class="item-data_temp" >
+                    <!-- <h4>Temp SCD</h4> -->
+                    <h5 style="font-size: 50px; color: blue;">{{sensorDetails.tempScd}}</h5>
+                
                 </ion-col>
                 
             </ion-row>
-
+            </ion-card-content>
+        </ion-card>
+                
+<ion-card >
+    <ion-card-content *ngIf="showGauage">
             <ion-row>
                 <ion-col style="text-align: center;">
                     <rg-gauge-chart [canvasWidth]="canvasWidth" [needleValue]="needleValue" [centralLabel]="centralLabel"
@@ -50,20 +82,14 @@
                 </ion-col>
             </ion-row>
                 <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
-                
-    
             </ion-card-content>
             <ion-card-content *ngIf="!showGauage">
                 <ion-row>
                     <ion-col style="text-align: center; padding: 20px; font-size: 20px;" >
-                        
                         <span style="color: red;">No Data Found</span>
                     </ion-col>
                 </ion-row>
             </ion-card-content>
         </ion-card>
-
-       
     </div>
-
 </ion-content>

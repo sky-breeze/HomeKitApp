@@ -46,6 +46,16 @@ export class AuthService {
     return this.http.post(environment.baseURL + 'login', postData)
   }
 
+
+  // getColumnData() {
+  //   const requestBody = {
+  //     "excelId": "1002"
+  //   }
+  //   const headers = { 'content-type': 'application/json' }
+  //   return this.http.post('https://surecollect.ai:9003/getDbColumns', requestBody,)
+
+  // }
+
   signup(postData: any): Observable<any> {
     const headers = { 'content-type': 'application/json' }
     return this.http.post(environment.baseURL + 'register', postData)
